@@ -82,6 +82,36 @@ def open_realtime_connection(
     return RealtimeWebSocketConnection(websocket)
 
 
+async def async_live_realtime_smoke(
+    api_key,
+    opener=None,
+    safety_identifier="patient-bot-local",
+):
+    opener = open_realtime_connection if opener is None else opener
+    connection = await _maybe_await(opener(api_key, safety_identifier=safety_identifier))
+    try:
+        await configure_realtime_connection(connection, "Realtime smoke test.")
+        return json.loads(await connection.recv())
+    finally:
+        await connection.close()
+
+
+def live_realtime_smoke(api_key, opener=None, safety_identifier="patient-bot-local"):
+    return asyncio.run(
+        async_live_realtime_smoke(
+            api_key,
+            opener=opener,
+            safety_identifier=safety_identifier,
+        )
+    )
+
+
+async def _maybe_await(value):
+    if hasattr(value, "__await__"):
+        return await value
+    return value
+
+
 def realtime_session_update(
     instructions,
     model="gpt-realtime-2",

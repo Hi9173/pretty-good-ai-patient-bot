@@ -119,6 +119,15 @@ This checkpoint adds the live OpenAI Realtime connection shape without running i
 - `open_realtime_connection(...)` wraps a `websocket-client` connection behind the same `send`/`recv` shape as `FakeRealtimeConnection`
 - tests inject a fake `websocket_module`, so no API key, network, or paid API call is used during normal verification
 
+## Checkpoint 13: guarded manual Realtime smoke command
+
+This checkpoint adds the smallest live smoke-test path while keeping normal tests offline:
+
+- `live_realtime_smoke(...)` opens a Realtime connection, sends `session.update`, reads one event, then closes
+- `python3 -m pgai_patient_bot.cli realtime-smoke --live` is the only CLI path that attempts the live smoke test
+- the command requires `OPENAI_API_KEY` from the environment
+- tests inject a fake smoke function, so no API key, network, or paid API call is used during normal verification
+
 ## Current Boundaries
 
 Built:
@@ -130,6 +139,7 @@ Built:
 - fake WebSocket adapter
 - fake OpenAI Realtime session/input/output events
 - guarded live OpenAI Realtime WebSocket adapter shape
+- guarded manual Realtime smoke command
 - symbolic and tiny real base64 PCMU payload fixtures
 - patient scenario fixtures
 - mocked call artifacts and bug report generation
@@ -138,7 +148,6 @@ Not built yet:
 
 - actual `/media` WebSocket server
 - generated speech audio
-- live OpenAI Realtime smoke run
 - actual Twilio call execution
 - real recordings
 - real transcripts

@@ -72,8 +72,17 @@ Then visit:
 http://127.0.0.1:8000/twiml
 ```
 
+## Manual Realtime Smoke Test
+
+This opens one guarded OpenAI Realtime WebSocket session, sends `session.update`, reads one event, and exits. It does not place a Twilio call.
+
+```bash
+export OPENAI_API_KEY=your_openai_api_key
+python3 -m pgai_patient_bot.cli realtime-smoke --live
+```
+
 ## Current Status
 
-Built and tested: offline call flow, fake Realtime loop, guarded live Realtime adapter shape, scenario fixtures, mocked artifacts, and bug report shape.
+Built and tested: offline call flow, fake Realtime loop, guarded live Realtime adapter shape, guarded manual Realtime smoke command, scenario fixtures, mocked artifacts, and bug report shape.
 
-Not built yet: actual `/media` WebSocket server, generated speech audio, live OpenAI Realtime smoke run, actual Twilio call execution, real recordings, or real transcripts.
+Not built yet: actual `/media` WebSocket server, generated speech audio, actual Twilio call execution, real recordings, or real transcripts.
