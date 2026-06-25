@@ -40,6 +40,7 @@ cp .env.example .env
 ```
 
 Fill in `.env` before using Twilio-facing commands. Do not commit real secrets.
+For OpenAI Realtime work, set `OPENAI_API_KEY` in `.env` only.
 
 ## Run Tests
 
