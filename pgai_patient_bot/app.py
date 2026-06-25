@@ -4,7 +4,7 @@ from pgai_patient_bot.checkpoint import load_config, twiml_for_stream
 
 
 def media_websocket_url(config):
-    base = config.public_base_url
+    base = config.public_media_base_url or config.public_base_url
     if base.startswith("https://"):
         base = "wss://" + base.removeprefix("https://")
     elif base.startswith("http://"):

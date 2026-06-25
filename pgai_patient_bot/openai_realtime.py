@@ -3,11 +3,12 @@ import importlib
 import json
 from urllib.parse import urlencode
 
-from pgai_patient_bot.audio import TELEPHONY_AUDIO_FORMAT
+from pgai_patient_bot.audio import TELEPHONY_AUDIO_FORMAT, pcmu_silence_payload
 
 
 REALTIME_MODEL = "gpt-realtime-2"
 REALTIME_WEBSOCKET_BASE_URL = "wss://api.openai.com/v1/realtime"
+DEFAULT_TURN_DETECTION = object()
 
 
 class FakeRealtimeConnection:
@@ -16,6 +17,7 @@ class FakeRealtimeConnection:
         self.responses = dict(responses)
         self.sent = []
         self._incoming = []
+        self.closed = False
 
     async def send(self, message):
         self.sent.append(message)
@@ -36,6 +38,9 @@ class FakeRealtimeConnection:
         if self._incoming:
             return self._incoming.pop(0)
         return json.dumps({"type": "response.done"})
+
+    async def close(self):
+        self.closed = True
 
 
 class RealtimeWebSocketConnection:
@@ -91,7 +96,7 @@ async def async_live_realtime_smoke(
     connection = await _maybe_await(opener(api_key, safety_identifier=safety_identifier))
     try:
         await configure_realtime_connection(connection, "Realtime smoke test.")
-        return json.loads(await connection.recv())
+        return await _next_session_result(connection)
     finally:
         await connection.close()
 
@@ -106,17 +111,71 @@ def live_realtime_smoke(api_key, opener=None, safety_identifier="patient-bot-loc
     )
 
 
+async def async_live_realtime_audio_smoke(
+    api_key,
+    opener=None,
+    safety_identifier="patient-bot-local",
+    payload=None,
+):
+    opener = open_realtime_connection if opener is None else opener
+    connection = await _maybe_await(opener(api_key, safety_identifier=safety_identifier))
+    try:
+        await configure_realtime_connection(
+            connection,
+            "Realtime audio append smoke test.",
+            turn_detection=None,
+        )
+        event = await _next_session_result(connection)
+        if event.get("type") == "error":
+            return event
+
+        await connection.send(input_audio_event(payload or pcmu_silence_payload(200)))
+        await connection.send(input_audio_commit_event())
+        return json.loads(await connection.recv())
+    finally:
+        await connection.close()
+
+
+def live_realtime_audio_smoke(
+    api_key,
+    opener=None,
+    safety_identifier="patient-bot-local",
+):
+    return asyncio.run(
+        async_live_realtime_audio_smoke(
+            api_key,
+            opener=opener,
+            safety_identifier=safety_identifier,
+        )
+    )
+
+
 async def _maybe_await(value):
     if hasattr(value, "__await__"):
         return await value
     return value
 
 
+async def _next_session_result(connection):
+    event = json.loads(await connection.recv())
+    if event.get("type") == "session.created":
+        event = json.loads(await connection.recv())
+    return event
+
+
 def realtime_session_update(
     instructions,
     model="gpt-realtime-2",
     voice="marin",
+    turn_detection=DEFAULT_TURN_DETECTION,
 ):
+    if turn_detection is DEFAULT_TURN_DETECTION:
+        turn_detection = {
+            "type": "server_vad",
+            "create_response": True,
+            "interrupt_response": True,
+        }
+
     return json.dumps(
         {
             "type": "session.update",
@@ -127,11 +186,7 @@ def realtime_session_update(
                 "audio": {
                     "input": {
                         "format": TELEPHONY_AUDIO_FORMAT,
-                        "turn_detection": {
-                            "type": "server_vad",
-                            "create_response": True,
-                            "interrupt_response": True,
-                        },
+                        "turn_detection": turn_detection,
                     },
                     "output": {
                         "format": TELEPHONY_AUDIO_FORMAT,
@@ -143,8 +198,14 @@ def realtime_session_update(
     )
 
 
-async def configure_realtime_connection(connection, instructions):
-    await connection.send(realtime_session_update(instructions))
+async def configure_realtime_connection(
+    connection,
+    instructions,
+    turn_detection=DEFAULT_TURN_DETECTION,
+):
+    await connection.send(
+        realtime_session_update(instructions, turn_detection=turn_detection)
+    )
 
 
 async def realtime_audio_from_connection(connection, payload):
@@ -160,6 +221,10 @@ def input_audio_event(payload):
             "audio": payload,
         }
     )
+
+
+def input_audio_commit_event():
+    return json.dumps({"type": "input_audio_buffer.commit"})
 
 
 def output_audio_delta(text):

@@ -73,6 +73,30 @@ class Checkpoint13Tests(unittest.TestCase):
         self.assertIn("Realtime smoke event: session.updated", output.getvalue())
         self.assertNotIn("secret-key", output.getvalue())
 
+    def test_main_realtime_smoke_returns_failure_on_error_event(self):
+        output = io.StringIO()
+
+        def smoke(api_key):
+            self.assertEqual(api_key, "secret-key")
+            return {
+                "type": "error",
+                "error": {
+                    "code": "insufficient_quota",
+                    "message": "quota exhausted",
+                },
+            }
+
+        exit_code = main(
+            ["realtime-smoke", "--live"],
+            env={"OPENAI_API_KEY": "secret-key"},
+            output=output,
+            realtime_smoke=smoke,
+        )
+
+        self.assertEqual(exit_code, 1)
+        self.assertIn("Realtime smoke error: insufficient_quota", output.getvalue())
+        self.assertNotIn("secret-key", output.getvalue())
+
 
 if __name__ == "__main__":
     unittest.main()

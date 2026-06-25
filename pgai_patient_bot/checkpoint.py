@@ -21,6 +21,7 @@ class Config:
     auth_token: str
     from_number: str
     public_base_url: str
+    public_media_base_url: str | None = None
 
 
 def load_config(env):
@@ -33,6 +34,7 @@ def load_config(env):
         auth_token=env["TWILIO_AUTH_TOKEN"],
         from_number=env["TWILIO_FROM_NUMBER"],
         public_base_url=env["PUBLIC_BASE_URL"].rstrip("/"),
+        public_media_base_url=env.get("PUBLIC_MEDIA_BASE_URL", "").rstrip("/") or None,
     )
 
 

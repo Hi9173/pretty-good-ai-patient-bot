@@ -38,6 +38,17 @@ class Checkpoint2Test(unittest.TestCase):
         self.assertIsNotNone(stream)
         self.assertEqual(stream.attrib["url"], "wss://example.ngrok-free.app/media")
 
+    def test_twiml_path_uses_separate_public_media_base_when_present(self):
+        env = sample_config_env()
+        env["PUBLIC_MEDIA_BASE_URL"] = "https://media.ngrok-free.app/"
+
+        status, headers, body = response_for_path("/twiml", load_config(env))
+        stream = ElementTree.fromstring(body).find("./Connect/Stream")
+
+        self.assertEqual(status, 200)
+        self.assertEqual(headers["Content-Type"], "text/xml")
+        self.assertEqual(stream.attrib["url"], "wss://media.ngrok-free.app/media")
+
     def test_unknown_path_returns_404(self):
         status, headers, body = response_for_path("/nope", sample_config())
 

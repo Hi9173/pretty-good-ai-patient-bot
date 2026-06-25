@@ -1,1 +1,2 @@
 websocket-client>=1.8
+websockets>=13.0
