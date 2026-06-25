@@ -33,7 +33,11 @@ tests/                  unittest checkpoint coverage
 
 ## Setup
 
-This project currently uses only the Python standard library.
+Most tests use only the Python standard library. The guarded live Realtime adapter uses `websocket-client`.
+
+```bash
+python3 -m pip install -r requirements.txt
+```
 
 ```bash
 cp .env.example .env
@@ -70,6 +74,6 @@ http://127.0.0.1:8000/twiml
 
 ## Current Status
 
-Built and tested: offline call flow, fake Realtime loop, scenario fixtures, mocked artifacts, and bug report shape.
+Built and tested: offline call flow, fake Realtime loop, guarded live Realtime adapter shape, scenario fixtures, mocked artifacts, and bug report shape.
 
-Not built yet: actual `/media` WebSocket server, generated speech audio, live OpenAI Realtime connection/auth, actual Twilio call execution, real recordings, or real transcripts.
+Not built yet: actual `/media` WebSocket server, generated speech audio, live OpenAI Realtime smoke run, actual Twilio call execution, real recordings, or real transcripts.

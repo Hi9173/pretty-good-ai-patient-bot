@@ -110,6 +110,15 @@ This checkpoint combines the remaining pre-live-Realtime work into one local run
 - `bug_report.md` is generated from the mocked call analyses
 - no real WebSocket server, Twilio call, OpenAI Realtime connection, or network request is involved
 
+## Checkpoint 12: guarded live Realtime adapter
+
+This checkpoint adds the live OpenAI Realtime connection shape without running it in tests:
+
+- `realtime_websocket_url(...)` builds the GA WebSocket URL for `gpt-realtime-2`
+- `realtime_headers(...)` builds the bearer auth and optional safety identifier headers
+- `open_realtime_connection(...)` wraps a `websocket-client` connection behind the same `send`/`recv` shape as `FakeRealtimeConnection`
+- tests inject a fake `websocket_module`, so no API key, network, or paid API call is used during normal verification
+
 ## Current Boundaries
 
 Built:
@@ -120,6 +129,7 @@ Built:
 - in-process media loop
 - fake WebSocket adapter
 - fake OpenAI Realtime session/input/output events
+- guarded live OpenAI Realtime WebSocket adapter shape
 - symbolic and tiny real base64 PCMU payload fixtures
 - patient scenario fixtures
 - mocked call artifacts and bug report generation
@@ -128,7 +138,7 @@ Not built yet:
 
 - actual `/media` WebSocket server
 - generated speech audio
-- live OpenAI Realtime connection/auth
+- live OpenAI Realtime smoke run
 - actual Twilio call execution
 - real recordings
 - real transcripts

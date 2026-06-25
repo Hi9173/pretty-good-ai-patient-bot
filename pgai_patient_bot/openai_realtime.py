@@ -1,6 +1,13 @@
+import asyncio
+import importlib
 import json
+from urllib.parse import urlencode
 
 from pgai_patient_bot.audio import TELEPHONY_AUDIO_FORMAT
+
+
+REALTIME_MODEL = "gpt-realtime-2"
+REALTIME_WEBSOCKET_BASE_URL = "wss://api.openai.com/v1/realtime"
 
 
 class FakeRealtimeConnection:
@@ -29,6 +36,50 @@ class FakeRealtimeConnection:
         if self._incoming:
             return self._incoming.pop(0)
         return json.dumps({"type": "response.done"})
+
+
+class RealtimeWebSocketConnection:
+    def __init__(self, websocket):
+        self.websocket = websocket
+
+    async def send(self, message):
+        await asyncio.to_thread(self.websocket.send, message)
+
+    async def recv(self):
+        return await asyncio.to_thread(self.websocket.recv)
+
+    async def close(self):
+        await asyncio.to_thread(self.websocket.close)
+
+
+def realtime_websocket_url(model=REALTIME_MODEL):
+    return f"{REALTIME_WEBSOCKET_BASE_URL}?{urlencode({'model': model})}"
+
+
+def realtime_headers(api_key, safety_identifier=None):
+    if not api_key:
+        raise ValueError("OPENAI_API_KEY is required")
+
+    headers = [f"Authorization: Bearer {api_key}"]
+    if safety_identifier:
+        headers.append(f"OpenAI-Safety-Identifier: {safety_identifier}")
+    return headers
+
+
+def open_realtime_connection(
+    api_key,
+    model=REALTIME_MODEL,
+    safety_identifier=None,
+    websocket_module=None,
+):
+    if websocket_module is None:
+        websocket_module = importlib.import_module("websocket")
+
+    websocket = websocket_module.create_connection(
+        realtime_websocket_url(model),
+        header=realtime_headers(api_key, safety_identifier),
+    )
+    return RealtimeWebSocketConnection(websocket)
 
 
 def realtime_session_update(
