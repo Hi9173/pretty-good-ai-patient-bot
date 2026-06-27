@@ -1,0 +1,31 @@
+[00:00.00-00:02.95] A: This call may be recorded for quality and training purposes.
+[00:03.25-00:05.20] A: ¿Está la enfermera o prima de vos?
+[00:06.00-00:08.00] B: Thanks for calling Pivot Point Orthopedics,
+[00:08.40-00:09.40] B: part of Pretty Good AI.
+[00:10.05-00:11.05] B: Am I speaking with Jordan?
+[00:13.30-00:14.40] A: Sí, un momento,
+[00:14.45-00:15.00] A: por favor.
+[00:15.90-00:19.10] A: Quiero confirmar mi información antes de seguir.
+[00:20.25-00:21.50] A: Soy Jordan Rivera.
+[00:22.60-00:26.15] A: Necesito saber el horario de la clínica y mis próximas citas.
+[00:44.92-00:45.32] B: Hi, Jordan.
+[00:45.47-00:47.57] B: Thanks for calling Pivot Point Orthopedic.
+[00:47.77-00:48.92] B: How can I help you today?
+[00:50.42-00:55.92] A: necesito saber el horario de la clínica y qué próximas citas tengo programadas.
+[01:08.27-01:08.67] B: Hi,
+[01:08.72-01:09.02] B: Jordan.
+[01:09.17-01:11.37] B: This is Pivot Point Orthopedic.
+[01:13.43-01:14.38] B: How can I help you today?
+[01:15.78-01:19.68] A: ¿Necesita usted en horario de la clínica in próxima cita?
+[01:20.33-01:22.93] A: ¿Me lo puede decir o indicar el siguiente paso?
+[01:37.98-01:38.58] B: Hi, Jordan.
+[01:38.68-01:40.53] B: Thanks for calling Pivot Point Orthopedics.
+[01:41.49-01:42.69] B: What can I help you with today?
+[01:44.29-01:46.64] A: Para este que se establece que el quinto es menos,
+[01:47.34-01:50.64] A: necesito el horario de la clínica y mis próximas citas.
+[01:50.94-01:53.69] A: ¿Puede decirme esos datos o el siguiente paso?
+[02:12.98-02:14.28] B: Please provide your date of birth.
+[02:15.18-02:19.68] A: Mi fecha de nacimiento es el 14 de mayo de 1988.
+[02:43.35-02:45.30] B: Can you please provide your date of birth?
+[02:46.15-02:49.60] A: Van a Bill 14 de mayo de 1988.
+[02:50.70-02:57.05] A: Si no se registró, puedo repetirla, pero también necesito el horario de la clínica y mis próximas citas.

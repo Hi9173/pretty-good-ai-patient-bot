@@ -73,11 +73,16 @@ class Checkpoint9Through13Tests(unittest.TestCase):
         self.assertEqual(
             {scenario["id"] for scenario in scenarios},
             {
-                "appointment_scheduling",
-                "reschedule",
-                "refill",
-                "office_hours",
-                "edge_case",
+                "returning_patient_dob_verification",
+                "account_information_change",
+                "refill_missing_triage",
+                "adversarial_schedule_constraints",
+                "emergency_symptom_scheduling",
+                "limited_english_hours_appointments",
+                "limited_english_mandarin_hours_appointments",
+                "roommate_privacy_appointment_lookup",
+                "spanish_hours_upcoming_appointments",
+                "recording_consent_declined",
             },
         )
         for scenario in scenarios:
@@ -98,7 +103,10 @@ class Checkpoint9Through13Tests(unittest.TestCase):
             call_dir = write_call_artifacts(
                 tmp,
                 "call-001",
-                {"scenario_id": "appointment_scheduling", "duration_seconds": 62},
+                {
+                    "scenario_id": "returning_patient_dob_verification",
+                    "duration_seconds": 62,
+                },
                 "PATIENT: I need an appointment.\nAGENT: Saturday at 9 works.\n",
                 "Potential scheduling-policy bug.\n",
             )
@@ -110,7 +118,7 @@ class Checkpoint9Through13Tests(unittest.TestCase):
             self.assertTrue((call_dir / "analysis.md").exists())
             self.assertEqual(
                 json.loads((call_dir / "metadata.json").read_text())["scenario_id"],
-                "appointment_scheduling",
+                "returning_patient_dob_verification",
             )
 
             report = report_path.read_text()

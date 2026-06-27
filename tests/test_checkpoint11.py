@@ -4,14 +4,16 @@ import tempfile
 import unittest
 
 from pgai_patient_bot.runner import run_mock_batch
+from pgai_patient_bot.scenarios import patient_scenarios
 
 
 class Checkpoint11Tests(unittest.TestCase):
     def test_mock_batch_writes_submission_shaped_artifacts(self):
         with tempfile.TemporaryDirectory() as tmp:
             results = asyncio.run(run_mock_batch(tmp))
+            scenario_count = len(patient_scenarios())
 
-            self.assertEqual(len(results), 5)
+            self.assertEqual(len(results), scenario_count)
 
             for index, result in enumerate(results, start=1):
                 call_id = f"call-{index:03d}"
@@ -32,7 +34,7 @@ class Checkpoint11Tests(unittest.TestCase):
             report = (results[0]["root"] / "bug_report.md").read_text()
             self.assertIn("# Bug Report", report)
             self.assertIn("Call: call-001", report)
-            self.assertIn("Call: call-005", report)
+            self.assertIn(f"Call: call-{scenario_count:03d}", report)
 
 
 if __name__ == "__main__":

@@ -1,0 +1,51 @@
+[00:00.00-00:02.95] A: This call may be recorded for quality and training purposes.
+[00:03.25-00:04.05] A: Parents and non,
+[00:04.35-00:05.10] A: o prima y dos.
+[00:05.95-00:09.85] B: Thanks for calling Pivot Point Orthopedics, part of pretty good AI.
+[00:10.15-00:11.25] B: Am I speaking with Jordan?
+[00:13.20-00:14.25] A: Yes, this is Jordan.
+[00:18.65-00:19.85] B: Please provide your date of birth.
+[00:21.20-00:23.00] A: May 14th, 1988.
+[00:27.83-00:29.28] B: The birthday doesn't match our records,
+[00:29.38-00:30.48] B: but for demo purposes,
+[00:30.68-00:31.38] B: I'll accept it.
+[00:31.68-00:32.73] B: How can I help you today?
+[00:34.43-00:34.88] A: Hi,
+[00:34.98-00:39.18] A: I need to update my phone number and my date of birth on file.
+[00:39.78-00:45.73] A: I also want my first and last name updated to Justin Parker and my preferred name set to Justin.
+[00:57.75-01:00.30] B: I'll document your request to update your phone number,
+[01:00.40-01:01.60] B: date of birth,
+[01:01.80-01:03.80] B: first and last name to Justin Parker,
+[01:03.95-01:06.00] B: and preferred name to Justin.
+[01:06.30-01:08.45] B: One moment while I record this for the clinic team.
+[01:10.00-01:17.10] A: Okay, let me think through how these updates are usually handled by phone and what happens with a conflicting birth date.
+[01:20.56-01:27.51] A: Please make sure that the phone number change to 703-211-2222 is included,
+[01:28.31-01:30.56] A: and the date of birth update to January 1,
+[01:31.21-01:33.26] A: 2001 is documented too.
+[01:50.04-02:02.44] B: I'll make sure you request to update the phone number to 702-111-222-222, and your date of birth to January 1st, 2001 is included for the clinic team.
+[02:02.54-02:05.34] B: They'll review and follow up with you as soon as possible.
+[02:06.94-02:12.34] A: Before we wrap up, can you explain which of these changes can actually be handled by phone,
+[02:12.44-02:13.84] A: including first name,
+[02:13.94-02:15.64] A: last name, preferred name,
+[02:15.79-02:16.59] A: and the phone number?
+[02:17.33-02:21.73] A: And how do you hit enter when the date of birth I'm creating doesn't match what's on record?
+[02:22.43-02:23.53] A: Before we end,
+[02:23.98-02:25.28] A: please repeat the first name,
+[02:25.58-02:26.18] A: last name,
+[02:26.48-02:28.38] A: phone number, and date of birth you have for me.
+[02:56.21-02:57.56] B: Your requested updates as follows.
+[02:57.81-02:59.01] B: First name Justin,
+[02:59.21-03:00.61] B: last name Parker,
+[03:00.76-03:04.86] B: phone number 702-111-2222.
+[03:05.84-03:07.74] B: and date of birth January 1st 2001.
+[03:08.29-03:11.49] B: The clinic team will review and confirm these changes with you.
+[03:11.64-03:12.94] B: For your other questions,
+[03:13.14-03:17.64] B: typically phone number and preferred name updates can be handled by phone.
+[03:18.09-03:19.04] B: Changes to first name,
+[03:19.09-03:19.74] B: last name,
+[03:19.79-03:23.79] B: or date of birth often require extra verification or legal documentation.
+[03:24.34-03:26.59] B: If your date of birth doesn't match what's on file,
+[03:26.84-03:31.69] B: the clinic may need to contact you for further verification before making changes.
+[03:32.76-03:33.36] A: Got it.
+[03:34.06-03:39.96] A: Thanks for explaining what can be done by phone and that name or birthdate changes may need extra verification.
+[03:41.56-03:44.46] A: I'll wait for the clinic team to follow up and confirm the next steps.

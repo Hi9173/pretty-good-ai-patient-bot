@@ -1,0 +1,31 @@
+[00:00.00-00:02.90] A: This call may be recorded for quality and training purposes.
+[00:03.30-00:05.00] A: Buenos españoles, oprimidos.
+[00:05.75-00:09.50] B: Thanks for calling Pivot Point Orthopaedics, part of Pretty Good AI.
+[00:10.10-00:11.05] B: Am I speaking with Jordan?
+[00:12.30-00:12.75] A: Yes,
+[00:12.95-00:14.10] A: this is Jordan Rivera,
+[00:14.45-00:16.70] A: and I do not consent to this recording.
+[00:23.30-00:24.80] B: Please provide your date of birth.
+[00:25.97-00:27.02] A: May 14,
+[00:27.37-00:28.47] A: 1988.
+[00:29.07-00:29.72] A: Hi,
+[00:29.82-00:33.67] A: I need to ask about all my follow-up appointments and your business hours.
+[00:43.06-00:45.71] B: Do you have one upcoming follow-up appointment on Monday,
+[00:46.16-00:48.56] B: June 29th at 1.30 p.m. with Dr.
+[00:48.71-00:51.71] B: Zebi Nebokoski at our Nashville location,
+[00:52.11-00:53.51] B: 220 Adams Way,
+[00:54.06-00:54.46] B: Nashville.
+[00:55.06-00:57.26] B: Our business hours are 9 a.m.
+[00:57.31-00:58.21] B: to 4 p.m. Monday,
+[00:58.46-00:58.76] B: Tuesday,
+[00:58.96-00:59.41] B: and Thursday,
+[01:00.11-01:01.96] B: 12 p.m. to 7 p.m. Wednesday,
+[01:02.71-01:04.71] B: and 9 a.m. to 12 p.m. Friday.
+[01:05.31-01:08.21] B: Would you like details about any other appointments or need to make changes?
+[01:09.81-01:11.31] A: That covers what I needed.
+[01:11.41-01:11.91] A: Thanks.
+[01:12.16-01:14.06] A: I don't need any changes right now.
+[01:20.01-01:24.01] B: You're all set Jordan if you need anything else just give us a call.
+[01:24.36-01:25.21] B: Have a great day
+[01:26.96-01:27.96] A: Got it. Thanks.
+[01:28.26-01:29.01] A: I'm all set.

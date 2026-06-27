@@ -17,7 +17,10 @@ def response_for_path(path, config):
         return (
             200,
             {"Content-Type": "text/xml"},
-            twiml_for_stream(media_websocket_url(config)),
+            twiml_for_stream(
+                media_websocket_url(config),
+                status_callback_url=f"{config.public_base_url}/stream-status",
+            ),
         )
     return 404, {"Content-Type": "text/plain"}, "not found\n"
 

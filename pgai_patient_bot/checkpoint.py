@@ -38,10 +38,18 @@ def load_config(env):
     )
 
 
-def twiml_for_stream(media_url):
+def twiml_for_stream(media_url, status_callback_url=None):
     response = ElementTree.Element("Response")
     connect = ElementTree.SubElement(response, "Connect")
-    ElementTree.SubElement(connect, "Stream", {"url": media_url})
+    stream_attrs = {"url": media_url}
+    if status_callback_url:
+        stream_attrs.update(
+            {
+                "statusCallback": status_callback_url,
+                "statusCallbackMethod": "GET",
+            }
+        )
+    ElementTree.SubElement(connect, "Stream", stream_attrs)
     return ElementTree.tostring(response, encoding="unicode")
 
 
@@ -52,6 +60,7 @@ def build_call_request(config):
             "To": TEST_NUMBER,
             "From": config.from_number,
             "Url": f"{config.public_base_url}/twiml",
+            "Method": "GET",
         }
     ).encode()
     token = f"{config.account_sid}:{config.auth_token}".encode()

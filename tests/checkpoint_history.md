@@ -85,7 +85,8 @@ This combined checkpoint wires the local mock pieces into a submission-shaped lo
 - `FakeRealtimeConnection` records `session.update` and `input_audio_buffer.append`
 - fake Realtime emits mocked `response.output_audio.delta` events back into the Twilio media loop
 - audio helpers name `audio/pcmu`, validate real base64 payloads, and mark symbolic mock audio as `mock:...`
-- `patient_scenarios(...)` provides scheduling, reschedule, refill, office-hours, and edge-case fixtures
+- `patient_scenarios(...)` provides numbered, structured, bug-focused persona fixtures for returning-patient identity, account information changes, refill, adversarial scheduling, emergency scheduling, provider, reschedule, and consent behavior
+- each scenario includes conversation rules and completion criteria so the simulated patient keeps answering until the job has a confirmed outcome or next step
 - `write_call_artifacts(...)` creates `calls/call-001/metadata.json`, `transcript.txt`, and `analysis.md`
 - `write_bug_report(...)` creates a simple issue report with severity, call reference, evidence, and expected behavior
 
@@ -104,7 +105,7 @@ This checkpoint replaces one symbolic mock path with a tiny real-shaped audio pa
 This checkpoint combines the remaining pre-live-Realtime work into one local runner:
 
 - `run_mock_call(...)` turns one scenario into `calls/call-001/metadata.json`, `transcript.txt`, and `analysis.md`
-- `run_mock_batch(...)` runs all five patient scenarios into `calls/call-001` through `calls/call-005`
+- `run_mock_batch(...)` runs all patient scenarios into numbered call artifact folders
 - every mocked call uses fake Twilio media, the media loop, and `FakeRealtimeConnection`
 - metadata records the Realtime event types sent during the run
 - `bug_report.md` is generated from the mocked call analyses
@@ -220,11 +221,81 @@ This checkpoint adapts the public tunnel setup to ngrok's one-host behavior:
 - one ngrok tunnel to port `8000` successfully verified public `/twiml` and public `/media?probe=1`
 - the public check returned `TwiML: ok`, `Media: ok`, and a stream URL shaped like `wss://<ngrok-host>/media`
 
+## Checkpoint 24: Twilio preflight
+
+This checkpoint adds a safer call-readiness check before placing a real Twilio call:
+
+- `twilio-check` validates the same required config as `dry-run-call`
+- the command confirms the fixed assessment target number, caller number, TwiML URL, and media URL
+- the command does not print `TWILIO_AUTH_TOKEN`, the Basic auth header, or the full account SID
+- missing config is reported as a clean CLI error instead of a traceback
+
+## Checkpoint 25: guarded Twilio live call
+
+This checkpoint places a real Twilio call only behind an explicit live flag:
+
+- `place-call --live` posts the existing safe Twilio call request and prints only the returned call status and SID
+- outbound call creation now asks Twilio to fetch TwiML with `GET`, matching the public server route
+- `serve-public` accepts Twilio's real `/twiml?...` query string form instead of only the bare `/twiml` path
+- a live call verified that Twilio fetched `/twiml?...` with HTTP `200` and upgraded `/media` to WebSocket `101`
+- Twilio reported the live smoke call as `completed` with no error code
+- normal test coverage still uses injected openers and local request objects, so tests avoid real Twilio calls
+
+## Checkpoint 26: raw audio capture
+
+This checkpoint records live media chunks as submission evidence:
+
+- `AudioArtifactRecorder` writes decoded PCMU chunks to `calls/<call-id>/audio/*.pcmu`
+- `audio_manifest.json` records chunk direction, relative file path, MIME type, byte count, and Twilio `CallSid`/`StreamSid` when present
+- `CALL_ARTIFACT_ROOT=.` enables recording for `serve-media --live` and `serve-public --live`
+- the artifact root is optional, and recording stays off when it is unset
+- a live Twilio call produced `calls/call-20260625T214536Z-7eeb8052/audio_manifest.json` with three inbound `160` byte PCMU chunks and no Twilio error
+- no outbound chunks were observed in that call; the recorder will capture them when the Realtime bridge emits `response.output_audio.delta`
+
+## Checkpoint 27: non-blocking Realtime output loop
+
+This checkpoint fixes the live bridge shape so Realtime can answer after delayed output events:
+
+- `handle_realtime_media_websocket(...)` now keeps forwarding Twilio media frames while a separate task listens for Realtime output
+- non-audio Realtime events are ignored, and `response.output_audio.delta` chunks are streamed back to Twilio immediately
+- the receiver exits on `response.done` and can restart for a later turn
+- a regression test proves the bridge forwards two caller frames even when Realtime does not emit audio after the first frame
+- a live call produced `calls/call-20260625T215552Z-3877d0d5/audio_manifest.json` with 4,421 inbound chunks and 83 outbound chunks
+- Twilio reported that live call as `completed`, duration `109`, with no error code
+
+## Checkpoint 28: MP3 export
+
+This checkpoint converts captured raw PCMU evidence into the required submission audio format:
+
+- `export_call_mp3(...)` reads `audio_manifest.json`, concatenates captured chunks in manifest order, and invokes `ffmpeg`
+- the ffmpeg input is raw G.711 mu-law at 8 kHz mono, matching Twilio media payloads
+- `python3 -m pgai_patient_bot.cli export-mp3 <call_dir>` writes `recording.mp3` in the call folder
+- the manifest records `"recording": "recording.mp3"` after a successful export
+- the latest live call exported to `calls/call-20260625T215552Z-3877d0d5/recording.mp3`, an 8 kHz mono MP3 around 131 seconds long
+
+## Checkpoint 29: real call transcript and analysis
+
+This checkpoint turns one captured MP3 into submission-readable evidence:
+
+- `openai_transcribe_mp3(...)` sends `recording.mp3` to the OpenAI transcription endpoint as `audio/mpeg`
+- transcription defaults to a diarized JSON response with automatic chunking for longer audio
+- `format_transcript(...)` writes timestamped speaker lines to `transcript.txt`
+- `openai_analyze_transcript(...)` sends the transcript to the Responses API and writes a concise Markdown QA analysis
+- `python3 -m pgai_patient_bot.cli transcribe-analyze-call <call_dir> --live` is the guarded live command for this step
+- the latest live call now has `transcript.txt` and `analysis.md` beside `recording.mp3`
+
 ## Current Boundaries
 
 Built:
 
 - safe Twilio call request construction
+- safe Twilio preflight output
+- guarded Twilio call placement
+- raw PCMU audio artifact recording
+- MP3 export for captured calls
+- real transcript generation for one captured call
+- real analysis generation for one captured call
+- non-blocking Realtime output forwarding
 - local TwiML HTTP endpoint
 - Twilio media event parsing/formatting
 - in-process media loop
@@ -243,14 +314,13 @@ Built:
 - safe `/media` probe path
 - verified local HTTP/WebSocket process rehearsal
 - verified public ngrok tunnel rehearsal
+- verified Twilio `/twiml` fetch and `/media` WebSocket upgrade
+- verified live inbound Twilio media capture
+- verified live outbound Realtime media capture
 - symbolic and tiny real base64 PCMU payload fixtures
 - patient scenario fixtures
 - mocked call artifacts and bug report generation
 
 Not built yet:
 
-- running public tunnel process
-- real Twilio media audio
-- actual Twilio call execution
-- real recordings
-- real transcripts
+- final multi-call bug report from real call analyses

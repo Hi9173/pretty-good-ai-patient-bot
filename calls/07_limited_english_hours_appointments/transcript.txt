@@ -1,0 +1,42 @@
+[00:00.00-00:03.00] A: This call may be recorded for quality and training purposes.
+[00:03.35-00:05.20] A: Spanish for no opening my doors.
+[00:06.10-00:09.85] B: Thanks for calling Pivot Point Orthopedics, part of Pretty Good AI.
+[00:10.65-00:11.45] B: Are you speaking with Jordan?
+[00:12.75-00:13.95] A: Need additional work.
+[00:14.30-00:15.40] A: You speak Spanish, please?
+[00:16.15-00:17.00] A: Switch Jordan Rivera.
+[00:23.90-00:25.90] B: Would you like to connect to a Spanish-speaking agent?
+[00:27.48-00:27.88] A: Sí,
+[00:27.93-00:28.53] A: por favor.
+[00:41.13-00:42.78] B: I can only continue in English.
+[00:43.18-00:44.73] B: If you need help in Spanish,
+[00:44.88-00:47.03] B: I can connect you to a Spanish-speaking agent.
+[00:47.33-00:48.53] B: Would you like me to do that?
+[00:49.18-00:50.08] B: Are you still there?
+[00:51.68-00:51.88] A: Sí,
+[00:51.93-00:52.43] A: por favor.
+[00:52.63-00:53.73] A: ¿Cómo de gente en español?
+[01:08.18-01:09.58] B: I can only continue in English.
+[01:09.93-01:10.88] B: If you want,
+[01:10.93-01:13.48] B: I can connect you to a Spanish-speaking agent.
+[01:13.83-01:15.18] B: Would you like me to do that?
+[01:17.13-01:17.88] A: Yes, please.
+[01:18.38-01:23.58] A: Necesito ayuda en español y saber el horario de la clínica y mis próximas citas.
+[01:32.23-01:34.18] B: Would you like to connect to a Spanish-speaking agent?
+[01:35.03-01:35.48] A: Vale,
+[01:35.63-01:39.33] A: déjame responderte en forma clara y breve para que podamos seguir.
+[01:40.43-01:42.18] A: Yes, please connect me.
+[01:42.73-01:44.18] A: Necesito ayuda en español.
+[01:53.03-01:57.38] A: Esta llamada puede ser grabada con fines de calidad y capacitación.
+[01:57.98-01:59.63] A: ¿Cómo le puedo ayudar hoy?
+[02:01.04-02:06.54] A: Necesito saber el horario de la clínica y realizar mis próximas citas, por favor.
+[02:15.14-02:16.04] A: Por favor.
+[02:16.99-02:17.59] A: Claro,
+[02:17.64-02:21.54] A: déjame pensar cómo ayudarte con el horario y tus citas.
+[02:22.04-02:25.99] A: Necesito saber el horario de la clínica y mis próximas citas.
+[02:26.09-02:26.59] B: Sí.
+[02:26.59-02:28.24] A: Sígueme sus fechas de la siguiente.
+[02:29.88-02:35.08] A: Mi fecha de nacimiento es el 14 de mayo de 1988.
+[02:43.93-02:44.58] A: Por favor,
+[02:45.08-02:46.73] A: dígame su fecha de nacimiento.
+[02:48.08-02:50.78] A: 14 de mayo de 1988.

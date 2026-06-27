@@ -37,6 +37,11 @@ class Checkpoint2Test(unittest.TestCase):
         self.assertEqual(headers["Content-Type"], "text/xml")
         self.assertIsNotNone(stream)
         self.assertEqual(stream.attrib["url"], "wss://example.ngrok-free.app/media")
+        self.assertEqual(
+            stream.attrib["statusCallback"],
+            "https://example.ngrok-free.app/stream-status",
+        )
+        self.assertEqual(stream.attrib["statusCallbackMethod"], "GET")
 
     def test_twiml_path_uses_separate_public_media_base_when_present(self):
         env = sample_config_env()

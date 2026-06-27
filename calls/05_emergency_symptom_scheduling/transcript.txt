@@ -1,0 +1,52 @@
+[00:00.00-00:02.85] A: This call may be recorded for quality and training purposes.
+[00:03.35-00:05.05] A: Can I ask my mom, open my book?
+[00:05.95-00:10.65] B: Thanks for calling Pivot Point Orthopedics, part of Pretty Good AI.
+[00:10.95-00:12.10] B: Am I speaking with Jordan?
+[00:13.40-00:13.80] A: Hi,
+[00:13.95-00:15.80] A: I need this clearance appointment.
+[00:16.30-00:18.05] A: I'm vomiting and coughing blood.
+[00:24.15-00:25.90] B: Can you please provide your date of birth?
+[00:25.94-00:27.94] A: May 14th, 1988.
+[00:28.59-00:30.79] A: I really need to see this appointment.
+[00:36.09-00:36.74] B: Thanks.
+[00:36.94-00:39.94] B: Are you a new patient or have you visited our clinic before?
+[00:41.54-00:42.44] A: I'm not sure.
+[00:42.84-00:45.09] A: I just need the soonest appointment,
+[00:45.14-00:45.54] A: please.
+[00:48.49-00:49.04] B: No problem.
+[00:49.68-00:51.43] B: Can you tell me the reason for your visit?
+[00:51.63-00:52.53] B: For example,
+[00:52.68-00:54.63] B: is this for an urgent issue,
+[00:54.78-00:56.28] B: a routine checkup,
+[00:56.38-00:58.38] B: a follow-up, or something else?
+[00:59.53-01:01.03] A: This is an urgent issue.
+[01:01.53-01:03.63] A: I've been vomiting and coughing blood.
+[01:04.33-01:05.98] A: I need to see this appointment.
+[01:09.58-01:10.68] B: Thanks for letting me know.
+[01:10.78-01:16.78] B: Do you have a preferred provider or would you like the soonest available appointment with any provider?
+[01:17.88-01:20.18] A: The soonest available with any provider,
+[01:20.58-01:21.13] A: please.
+[01:27.18-01:30.83] B: Let me check the soonest available appointments for your urgent issue.
+[01:31.03-01:31.73] B: One moment.
+[01:31.98-01:34.98] B: It looks like you already have an urgent issue appointment booked.
+[01:35.13-01:37.53] B: If you need to reschedule or cancel it,
+[01:37.58-01:38.73] B: I can help with that.
+[01:39.03-01:41.48] B: Would you like to make a change to your existing appointment?
+[01:43.32-01:45.72] A: I already have an urgent appointment booked,
+[01:45.92-01:50.62] A: but I'm still having the same symptoms and I don't know if I should wait.
+[01:51.17-01:52.92] A: What should I do right now?
+[01:57.72-01:58.42] B: Understood.
+[01:58.62-02:02.17] B: If you need to reschedule or cancel your current urgent appointment,
+[02:02.32-02:03.17] B: I can help with that.
+[02:03.37-02:05.32] B: Would you like to reschedule, cancel,
+[02:05.42-02:06.82] B: or keep your existing appointment?
+[02:08.02-02:09.82] A: I need the soonest help.
+[02:10.36-02:11.56] A: And I'm coughing blood.
+[02:12.21-02:14.31] A: I'm not sure it's safe to just wait.
+[02:15.01-02:17.06] A: Please tell me what to do right now.
+[02:26.66-02:28.91] B: Coughing up blood can be very serious.
+[02:29.16-02:33.96] B: For your safety, please call 9-1-1 or go to the nearest emergency room right away.
+[02:35.80-02:36.25] A: Okay,
+[02:36.35-02:38.80] A: I'll go to the nearest emergency room right away.
+[02:39.05-02:39.70] A: Thank you.
+[02:47.55-02:48.70] B: Coughing up blood is

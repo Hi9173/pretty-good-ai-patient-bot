@@ -1,0 +1,28 @@
+[00:00.00-00:02.95] A: This call may be recorded for quality and training purposes.
+[00:05.90-00:11.15] B: Thanks for calling Pivot Point Orthopedics, part of Pretty Good A.I. Am I speaking with Jordan?
+[00:12.85-00:14.25] A: My English no good.
+[00:15.05-00:17.30] A: You speak Mandarin Chinese, please?
+[00:18.05-00:18.40] A: Well, sure,
+[00:18.50-00:19.45] A: but Jordan Rivera.
+[00:25.60-00:27.70] B: Would you like to connect to a Chinese-speaking agent?
+[00:28.98-00:29.33] A: Yeah.
+[00:29.68-00:32.23] A: 还有一个地方可以OK吗?
+[00:32.43-00:34.68] A: 我需要Jordan River
+[00:36.93-00:37.48] A: 你好
+[00:39.73-00:41.63] A: 我是Jordan Rivera
+[00:42.43-00:50.03] A: 我想知道诊所的营业时间 还有我接下来的预约 麻烦帮我查一下
+[01:01.36-01:05.36] B: Xin Zhao Su Wonin Dei Chu Shang Riki
+[01:06.91-01:07.46] A: 好的,
+[01:07.56-01:13.56] A: 我拿出一下我的出生日期然后我们再看看一天的时间
+[01:14.86-01:26.96] A: 我的出生日期是1988年5月14日麻烦您帮我查一下诊所的预约时间还有我接下来的预约
+[01:31.54-01:33.04] B: Shun, Shuo,
+[01:33.09-01:33.69] B: Shu,
+[01:33.94-01:34.34] B: Nin,
+[01:34.49-01:34.99] B: De Shu,
+[01:35.24-01:35.64] B: Cheng,
+[01:35.84-01:36.34] B: Ri,
+[01:36.49-01:36.94] B: Qi.
+[01:38.69-01:49.94] A: 1978年5月14日用数字说是1988-05-14
+[02:08.92-02:15.37] C: 今天預約時間是6月26日星期一下午1點半在220 Athens Way, Nashville,
+[02:15.52-02:15.82] C: TN
+[02:17.32-02:27.42] A: 好的,這個預約我收到了。我還需要診所的營業時間,請問你可以告訴我每天幾點開門幾點關門嗎?

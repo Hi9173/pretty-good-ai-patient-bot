@@ -1,0 +1,57 @@
+[00:00.00-00:02.95] A: This call may be recorded for quality and training purposes.
+[00:03.35-00:05.05] A: Senators, I know opening my emails.
+[00:05.65-00:09.20] B: Thanks for calling Pivot Point Orthopedics, part of Pretty Good AI.
+[00:09.70-00:10.85] B: Am I speaking with Jordan?
+[00:11.90-00:12.50] A: Yes,
+[00:12.55-00:13.70] A: that's the sort of them.
+[00:16.50-00:18.05] B: Please provide your date of birth.
+[00:19.45-00:20.20] A: May 14,
+[00:20.50-00:21.10] A: 1988.
+[00:26.20-00:30.30] B: The birth date doesn't match our records, but for general purposes I'll accept it.
+[00:30.60-00:31.80] B: How can I help you today?
+[00:33.20-00:33.35] A: Hi,
+[00:33.50-00:35.85] A: I need a refill on a prescription medication.
+[00:45.75-00:48.00] B: Which medication do you need refilled today?
+[00:49.35-00:51.10] A: Gabapentin 300mg.
+[00:55.48-00:57.68] B: How many days of gabapentin do you have left?
+[00:57.98-00:59.18] B: If you are already out,
+[00:59.28-01:00.63] B: just let me know.
+[01:01.48-01:02.08] A: One day.
+[01:05.03-01:06.88] B: I have one day left for gabapentin.
+[01:07.38-01:12.48] B: Can I confirm your callback number as 629-271-3010?
+[01:14.63-01:16.88] A: 629-273-019.
+[01:20.58-01:23.88] B: Is there anything else you'd like the clinic to know about your refill request?
+[01:24.50-01:26.45] B: For example, any symptoms or urgency.
+[01:27.85-01:28.60] A: It's urgent.
+[01:28.75-01:34.30] A: I only have two capsules left and the pharmacy said it needs prescriber approval before it can be refilled.
+[01:43.20-01:46.25] B: Could you please tell me the name of the pharmacy you want to use for your medication?
+[01:46.65-01:47.85] B: If you know the address,
+[01:47.90-01:48.15] B: city,
+[01:48.20-01:50.45] B: or any details like cross streets or nearby stores.
+[01:51.38-01:52.23] B: That would help too.
+[01:52.58-01:54.23] B: If you have their phone or fax number,
+[01:54.43-01:55.28] B: please share that as well.
+[01:56.78-02:01.18] A: cds@123fakemainstreet, Springfields, California,
+[02:01.53-02:02.93] A: 95370.
+[02:03.38-02:05.18] A: I don't have their phone or fax number.
+[02:23.64-02:27.14] B: The update your pharmacy information one moment while I take care of that.
+[02:27.89-02:32.34] A: Okay, let me check that pharmacy update and move things along for your refill.
+[02:33.09-02:36.24] A: I'm waiting to hear back about the refill request at that CVS.
+[02:42.14-02:45.94] B: I've documented your medication refill request for our clinic support team.
+[02:46.14-02:49.14] B: They'll review it and get back to you as soon as they can
+[02:49.81-02:51.41] B: Is there anything else I can help with right now?
+[02:53.81-02:57.01] A: Yes, please note that the prescriber is Dr.
+[02:57.11-02:57.36] A: Chen,
+[02:57.51-03:03.01] A: and I need confirmation that the refill was approved and sent to the Springfield CVS.
+[03:03.21-03:06.56] A: It needs prescriber approval before it can be authorized.
+[03:15.06-03:20.46] B: Your refill request for gabapentin at CVS on Safe Main Street has been sent to the clinic team.
+[03:20.66-03:24.16] B: They'll contact you as soon as possible once your provider reviews it.
+[03:24.31-03:26.26] B: If you need anything else, just let me know.
+[03:27.36-03:32.51] A: I still need confirmation that it's actually approved and sent to the Springfield CVS.
+[03:32.56-03:35.31] A: It can't be authorized without doctor approval.
+[03:43.51-03:48.76] B: Your request is already with the clinic team and they'll reach out as soon as your provider reviews the refill for CVS.
+[03:48.86-03:49.96] B: Do you have any other questions?
+[03:51.01-03:52.76] A: I understand it's under review,
+[03:52.86-03:58.71] A: but I need confirmation once the refill is actually approved and sent to the Springfield CVS.
+[04:10.71-04:12.66] B: I'll add that the prescriber is Dr.
+[04:12.76-04:18.01] B: Chen and that you need confirmation once the refill is approved and sent to the Springfield.

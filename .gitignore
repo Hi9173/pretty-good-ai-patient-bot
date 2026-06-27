@@ -4,7 +4,10 @@ __pycache__/
 .venv/
 .pytest_cache/
 .DS_Store
-calls/
-bug_report.md
+calls/*/audio/
+calls/*/audio_manifest.json
+calls/*/stream_status.jsonl
+calls/*/public_server.log
+calls/**/*.pcmu
 outputs/
 work/

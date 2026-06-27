@@ -1,0 +1,56 @@
+[00:00.00-00:02.95] A: This call may be recorded for quality and training purposes.
+[00:03.30-00:05.10] A: Francis, by noon, opening my doors.
+[00:05.75-00:09.55] B: Thanks for calling Pivot Point Orthopedics, sort of pretty good AI.
+[00:09.85-00:11.05] B: Am I speaking with Jordan?
+[00:12.75-00:13.35] A: Hi,
+[00:13.40-00:17.90] A: I need you to add a new appointment at that Friday in the week of July 15th.
+[00:24.30-00:26.20] B: Can you please provide your date of birth?
+[00:27.89-00:29.74] A: May 14th, 1988.
+[00:37.29-00:38.99] B: What is the main reason for your visit?
+[00:39.54-00:40.14] B: For example,
+[00:40.19-00:43.14] B: is this for a routine checkup, a new patient consultation,
+[00:43.49-00:44.89] B: a follow-up, or something else?
+[00:46.39-00:48.79] A: It's a follow-up for ongoing back pain.
+[00:53.84-00:56.09] B: Do you have a specific provider you'd like to see,
+[00:56.19-00:58.04] B: or are you open to any available provider?
+[00:59.79-01:05.69] A: Okay, let me think about how to handle your provider preference while keeping this quick.
+[01:06.94-01:09.19] A: I'd prefer to stay with the same clinic.
+[01:09.69-01:15.54] A: I'm mainly trying to book that Friday and the week of July 15th for a new appointment.
+[01:19.25-01:21.45] B: If you have a specific provider you want to see,
+[01:21.55-01:22.75] B: just let me know their name.
+[01:22.95-01:24.95] B: If you're open to any available provider,
+[01:25.15-01:26.45] B: I'll look for the soonest option.
+[01:27.05-01:29.10] B: Would you like to request a specific provider,
+[01:29.15-01:31.80] B: or should I check all available providers for you?
+[01:32.15-01:38.35] B: The soonest Friday after July 15th is July 24th. Would you like to see available times on that day,
+[01:38.40-01:39.75] B: or would you prefer Monday,
+[01:39.80-01:42.35] B: July 20th, which also has several openings?
+[01:45.52-01:48.77] A: Please check all available providers in the same clinic.
+[01:49.57-01:52.02] A: I'm not asking for July 24 or Monday.
+[01:52.57-01:55.37] A: I want the Friday in the week of July 15,
+[01:55.57-01:56.37] A: 2026,
+[01:56.57-01:58.17] A: which is July 17.
+[01:59.27-02:04.42] A: Please look for the first available time that day, but only outside my available window.
+[02:13.27-02:14.37] B: Here's an option for Friday,
+[02:14.57-02:22.22] B: July 24th at Pivot Point Orthopedics, 10 a.m. with Doogie Hauser 1 p.m. with Doogie Hauser 1 p.m. with Kelly Mobile,
+[02:22.32-02:23.17] B: M.D.
+[02:23.52-02:26.42] B: Would you like to book one of these or hear more times?
+[02:28.67-02:29.97] A: I don't want July 24.
+[02:30.67-02:34.82] A: I want Friday, July 17 to Friday in the week of July 15.
+[02:35.80-02:38.80] A: For that day, I'm unavailable from 8 to 9,
+[02:39.30-02:40.20] A: from 10 to 11,
+[02:40.70-02:41.65] A: before 11.30,
+[02:42.10-02:42.85] A: during lunch,
+[02:43.25-02:43.95] A: from 2 to 4,
+[02:44.40-02:45.55] A: and from 6 to 7,
+[02:45.60-02:48.00] A: and nothing within 30 minutes of noon.
+[02:53.95-02:56.50] B: On Friday, July 24th, you can book...
+[02:57.60-03:01.45] A: I'm not trying to book July 24th. I want Friday,
+[03:01.65-03:05.10] A: July 17th, the Friday in the week of July 15th.
+[03:05.65-03:10.35] A: Please schedule the first available time that day outside my unavailable window.
+[03:11.20-03:13.05] A: If you can't access that date,
+[03:13.70-03:16.50] A: please tell me the next step to get July 17th checked.
+[03:16.85-03:17.45] B: No problem.
+[03:17.85-03:22.25] B: Here are some options for Monday, July 20th, 10 a.m. with Susie Houser,
+[03:22.65-03:26.10] B: 11 a.m. with Susie Houser, 1 p.m. with Susie Houser.
+[03:26.50-03:29.40] B: Would you like to book one of these or hear more times?

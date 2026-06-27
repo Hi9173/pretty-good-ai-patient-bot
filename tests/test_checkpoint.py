@@ -46,6 +46,20 @@ class CheckpointTest(unittest.TestCase):
         self.assertIsNotNone(stream)
         self.assertEqual(stream.attrib["url"], "wss://example.ngrok-free.app/media")
 
+    def test_twiml_for_stream_adds_status_callback_when_provided(self):
+        xml = twiml_for_stream(
+            "wss://example.ngrok-free.app/media",
+            status_callback_url="https://example.ngrok-free.app/stream-status",
+        )
+
+        stream = ElementTree.fromstring(xml).find("./Connect/Stream")
+
+        self.assertEqual(
+            stream.attrib["statusCallback"],
+            "https://example.ngrok-free.app/stream-status",
+        )
+        self.assertEqual(stream.attrib["statusCallbackMethod"], "GET")
+
     def test_build_call_request_targets_only_the_assessment_number(self):
         config = load_config(
             {
@@ -67,6 +81,7 @@ class CheckpointTest(unittest.TestCase):
         self.assertEqual(body["To"], [TEST_NUMBER])
         self.assertEqual(body["From"], ["+15551234567"])
         self.assertEqual(body["Url"], ["https://example.ngrok-free.app/twiml"])
+        self.assertEqual(body["Method"], ["GET"])
 
 
 if __name__ == "__main__":

@@ -1,0 +1,36 @@
+[00:00.00-00:02.95] A: This call may be recorded for quality and training purposes.
+[00:05.75-00:09.85] B: Thanks for calling Pittsburgh Point Orthopedics, part of Pretty Good AI.
+[00:10.25-00:11.40] B: Am I speaking with Jordan?
+[00:12.75-00:14.70] A: Yes, this is Jordan.
+[00:17.95-00:19.20] B: Please tell me your date of birth.
+[00:20.70-00:21.75] A: May 14,
+[00:22.25-00:22.70] A: 1988.
+[00:23.30-00:25.20] A: I need to schedule a follow-up.
+[00:29.75-00:32.85] B: The birthday doesn't match our records, but for demo purposes I'll accept it.
+[00:33.30-00:34.45] B: How can I help you today?
+[00:36.05-00:39.50] C: I need to schedule a follow-up for ongoing back pain.
+[00:40.05-00:43.10] C: If you need anything else to book it, please let me know.
+[00:51.05-00:55.05] B: Do you have a specific provider you'd like to see or are you open to the next available?
+[00:56.85-00:58.35] C: Next available is fine.
+[00:58.90-01:00.65] C: I just want to get the follow-up scheduled.
+[01:07.40-01:08.40] B: Just to confirm,
+[01:08.55-01:14.55] B: would you like to book the 2 p.m. slot this Friday, June 26th, or a different time?
+[01:16.05-01:16.45] C: Yes,
+[01:16.50-01:18.75] C: 2 p.m. this Friday works.
+[01:19.25-01:22.05] C: Please book it and let me know if anything else is needed.
+[01:32.37-01:35.57] B: Your follow-up for ongoing back pain is set for Friday,
+[01:35.67-01:45.07] B: June 26th at 2 p.m. with Carl Menz PT at Pivot Point Orthopedics. Please bring your photo ID,
+[01:45.22-01:46.17] B: insurance card,
+[01:46.32-01:49.57] B: a list of current medications, and any imaging discs you have.
+[01:50.02-01:51.62] B: Is there anything else I can help you with today?
+[01:52.47-01:53.92] C: No, that's everything.
+[01:54.57-01:55.87] C: Thanks for getting it scheduled.
+[02:04.85-02:06.20] B: You're all set for Friday,
+[02:06.25-02:12.95] B: June 26th at 2 p.m. with Carl Ments, PT at Pivot Point Orthopedics. Please bring your photo ID,
+[02:13.05-02:13.95] B: insurance card,
+[02:14.05-02:15.35] B: a list of your current medications,
+[02:15.45-02:17.35] B: and any imaging discs you have.
+[02:17.65-02:18.85] B: Let me know if you need anything.
+[02:20.05-02:20.60] C: Thanks,
+[02:20.70-02:21.55] C: I won't start.
+[02:21.85-02:23.45] C: I'll bring those items to the appointment.
