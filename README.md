@@ -65,6 +65,8 @@ Install the Python packages in your preferred environment:
 python3 -m pip install websockets websocket-client
 ```
 
+Install `ffmpeg` and `ngrok` separately if they are not already available on your machine.
+
 Create a local environment file:
 
 ```bash
